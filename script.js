@@ -13,12 +13,15 @@ function createTask(){
         
         //  created elemente
         const li = document.createElement('li')
-        const span =document.createElement('input')
+        const span =document.createElement('span')
+        span.setAttribute('id',"myLi")
+
         const createcheck = document.createElement('input')
         const deleted = document.createElement('button')
         const edit = document.createElement('button')
         const complet = document.getElementById('completed')
         const tasks = document.getElementById("taskHere")
+        const editOption = document.getElementById("myLi")
 
         
         span.style.border ='none'
@@ -30,9 +33,15 @@ function createTask(){
         
     })
     edit.addEventListener("click",function(){
-// edit option
-        edit.textContent ="save"
-        if(edit.textContent ="save"){
+         if(edit.textContent =="edit")  { const editedText =document.createElement('input')
+            editedText.value =span.textContent
+            li.replaceChild(editedText,span)
+            
+            edit.textContent ="save"
+            console.log(editedText.textContent)
+        }
+            
+        if(edit.textContent =="save"){
             edit.addEventListener("click",function(){
                 edit.textContent ="edit"
             })
@@ -46,7 +55,7 @@ function createTask(){
     // create text content
 
         // li.textContent =one.value
-        span.value =one.value
+        span.textContent =one.value
         deleted.textContent ="delete"
         edit.textContent ="edit"
         
@@ -54,8 +63,8 @@ function createTask(){
         
         // append child for li
         myList.appendChild(li)
-        li.appendChild(span)
         li.appendChild(createcheck)
+        li.appendChild(span)
         li.appendChild(edit)
         li.appendChild(deleted)
         one.value = ''
