@@ -24,6 +24,8 @@ function createTask(){
         const editOption = document.getElementById("myLi")
 
         
+
+        
         span.style.border ='none'
     //event listener
     createcheck.addEventListener("click",function(){
@@ -32,6 +34,12 @@ function createTask(){
         complet.appendChild(li)
         
     })
+    //background color
+    const randomColor = getRandomColor();
+    li.style.backgroundColor = randomColor;
+
+
+
     edit.addEventListener("click",function(){
         one.value =span.textContent
         li.parentElement.removeChild(li)
@@ -79,4 +87,12 @@ function NightMode() {
     document.body.classList.toggle('night-mode');
 }
 
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 
