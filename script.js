@@ -33,19 +33,21 @@ function createTask(){
         
     })
     edit.addEventListener("click",function(){
-         if(edit.textContent =="edit")  { const editedText =document.createElement('input')
-            editedText.value =span.textContent
-            li.replaceChild(editedText,span)
+        one.value =span.textContent
+        li.parentElement.removeChild(li)
+        //  if(edit.textContent =="edit")  { const editedText =document.createElement('input')
+        //     editedText.value =span.textContent
+        //     li.replaceChild(editedText,span)
             
-            edit.textContent ="save"
-            console.log(editedText.textContent)
-        }
+        //     edit.textContent ="save"
+        //     console.log(editedText.textContent)
+        // }
             
-        if(edit.textContent =="save"){
-            edit.addEventListener("click",function(){
-                edit.textContent ="edit"
-            })
-        }
+        // if(edit.textContent =="save"){
+        //     edit.addEventListener("click",function(){
+        //         edit.textContent ="edit"
+        //     })
+        // }
         
         
     })
